@@ -156,13 +156,18 @@ public class 실습6 {
 //        142가7415: 30분 주차, 최종 요금: 1000원
 //        888호8888: 140분 주차, 최종 요금: 6500원
 //        931나8234: 420분 주차, 최종 요금: 20000원
-        for(int i=0; i<= carNumbers.length-1; i++){
-            String carNumber=carNumbers[i];
-            System.out.print(carNumber);
-            for(int j=0; j<=3; j++){
-
+        for (int i = 0; i <= carNumbers.length - 1; i++) {
+            String Numbers = carNumbers[i];
+            int Minute = usageMinutes[i];
+            int Pay = (Minute - 30) / 10;
+            Pay = Pay > 0 ? Pay : 0;
+            int pay1 = Pay * 500 + 1000;
+            if (pay1 > 20000) {
+                pay1 = 20000;
             }
+            System.out.println(Numbers+":"+Minute+"분주차 \t"+pay1+"원");
         }
+
 
 
     } //main e
