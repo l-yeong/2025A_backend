@@ -151,24 +151,35 @@ public class 실습6 {
 //        선언 코드:
         String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
         int[] usageMinutes = {65, 30, 140, 420};
+
 //        출력 예시:
 //        210어7125: 65분 주차, 최종 요금: 2500원
 //        142가7415: 30분 주차, 최종 요금: 1000원
 //        888호8888: 140분 주차, 최종 요금: 6500원
 //        931나8234: 420분 주차, 최종 요금: 20000원
-        for (int i = 0; i <= carNumbers.length - 1; i++) {
-            String Numbers = carNumbers[i];
-            int Minute = usageMinutes[i];
-            int Pay = (Minute - 30) / 10;
-            Pay = Pay > 0 ? Pay : 0;
-            int pay1 = Pay * 500 + 1000;
-            if (pay1 > 20000) {
-                pay1 = 20000;
-            }
-            System.out.println(Numbers+":"+Minute+"분주차 \t"+pay1+"원");
-        }
+//        for (int i = 0; i <= carNumbers.length - 1; i++) {
+//            String Numbers = carNumbers[i];
+//            int Minute = usageMinutes[i];
+//            int Pay = (Minute - 30) / 10;
+//            Pay = Pay > 0 ? Pay : 0;
+//            int pay1 = Pay * 500 + 1000;
+//            if (pay1 > 20000) {
+//                pay1 = 20000;
+//            }
+//            System.out.println(Numbers+":"+Minute+"분주차 \t"+"최종 요금"+pay1+"원");
+//        }
 
 
+        //int money=0;
+        //for(int j=0; j<=carNumbers.length-1; j++){
+        //    if(usageMinutes[j]<=30){
+        //        money=1000;
+        //    }else { // 사용요금에 30분 빼고 (10분당) 나누기 10( 나머지없음:int/int -> int(몫))*500원+1000원
+        //        money=((usageMinutes[j]-30)/10*500)+1000;
+        //    }
+        //}
+        //money = money >= 20000 ? 20000 :money;  // 만약에 금액이 2만원 초과이면 2만원, 아니면 금액
+        //System.out.println(money);
 
     } //main e
 } //class e

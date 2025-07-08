@@ -155,11 +155,11 @@ public class 실습7 {
         menu3.price = 3000;
         menu3.isSignature = false;
 
-        if (menu1.isSignature==false) {
+        if (menu1.isSignature==true) {
             System.out.println("[대표메뉴]" + menu1.name + menu1.price);
-        }  if (menu2.isSignature==false) {
+        }  if (menu2.isSignature==true) {
             System.out.println("[대표메뉴]" + menu2.name + menu2.price);
-        }  if (menu3.isSignature==false) {
+        }  if (menu3.isSignature==true) {
             System.out.println("[대표메뉴]" + menu3.name + menu3.price);
         }
 
