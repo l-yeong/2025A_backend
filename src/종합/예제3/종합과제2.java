@@ -2,10 +2,11 @@ package 종합.예제3;
 
 import java.util.Scanner;
 
-public class BoardService4 {
+public class 종합과제2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Waiting[] waitings = new Waiting[100];
+
 
         for (; ; ) {
             System.out.println("=========== 맛집 대기 시스템 ===========");
