@@ -3,7 +3,7 @@ package 종합.예제4;
 import javax.crypto.spec.PSource;
 import java.util.Scanner;
 
-//BoardService4: 입출력 담당
+//BoardSer vice4: 입출력 담당
 public class BoardService4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
