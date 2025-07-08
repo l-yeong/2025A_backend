@@ -1,5 +1,7 @@
 package day07_20250708;
 
+import java.security.spec.RSAOtherPrimeInfo;
+
 public class 실습8 {
     public static void main(String[] args) {
 //[JAVA] 실습8 : 클래스와 객체의메소드
@@ -55,7 +57,8 @@ public class 실습8 {
 //        1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소드를 정의하세요.
 //        2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.
         Visualizer star = new Visualizer();
-        star.getStars(4);
+        star.getStars(5);
+
 
 //
 //[문제 8] ParkingLot 클래스를 만드세요.
@@ -65,22 +68,26 @@ public class 실습8 {
 //        추가 요금: 30분 초과 시, 매 10분마다 500원씩 추가
 //        일일 최대 요금: 20,000원
 //        3. main 함수에서 calculateFee 메소드에 65, 140을 각각 인자로 전달하여 반환된 요금을 출력하세요.
-    }
-}
+    ParkingLot park = new ParkingLot();
+    int p8=park.calculateFee(65);
+        System.out.println("\n"+p8);
 
+    }//main e
+}//class e
+//1번 클래스
 class Printer {
     void printMessage() {
         System.out.println("안녕하세요 메소드 입니다.");
 
     }
 }
-
+// 2번클래스
 class greeter {
     void greet(String name) {
         System.out.printf("안녕하세요 [%s]님 \n", name);
     }
 }
-
+// 3번클래스
 class SimpleCalculator {
     int add(int x, int y) {
         int sum = x + y;
@@ -88,7 +95,7 @@ class SimpleCalculator {
         return sum;
     }
 }
-
+// 4번클래스
 class Checker {
     int isEven(int x) {
         if (x % 2 == 1) {
@@ -100,7 +107,7 @@ class Checker {
         return x;
     }
 }
-
+// 5번클래스
 class Lamp {
     boolean isLamp = false;
 
@@ -114,7 +121,7 @@ class Lamp {
         return isLamp;
     }
 }
-
+// 6번 클래스
 class Product {
 
     String name;
@@ -143,18 +150,34 @@ class Product {
 //        return inven;
 //    }
 //}
-
+// 7번 클래스
 class Visualizer {
     int star = 0;
 
     int getStars(int x) {
         for (int j = 0; j <= 0; j++) {
-            for (int i = 0; i <= x; i++) {
+            for (int i = 1; i <= x; i++) {
                 if (x >= star) {
-                    System.out.println("★");
+                    System.out.print("★");
                 }
+                System.out.print("");
             }
         }
         return x;
     }
 }
+// 8번 클래스
+class ParkingLot{
+    int calculateFee (int minute){
+        int money=0;
+        if(minute<=30){
+            money=1000;
+        }else{
+            money=((minute-30)/10*500)+1000;
+        }
+        money = money >=20000? 20000:money;
+        return  money;
+    }
+
+}
+
