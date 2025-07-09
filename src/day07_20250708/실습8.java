@@ -57,8 +57,8 @@ public class 실습8 {
 //        1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소드를 정의하세요.
 //        2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.
         Visualizer star = new Visualizer();
-        star.getStars(5);
-
+        String 문자열 = star.getStars(5);
+        System.out.println(문자열);
 
 //
 //[문제 8] ParkingLot 클래스를 만드세요.
@@ -70,7 +70,9 @@ public class 실습8 {
 //        3. main 함수에서 calculateFee 메소드에 65, 140을 각각 인자로 전달하여 반환된 요금을 출력하세요.
     ParkingLot park = new ParkingLot();
     int p8=park.calculateFee(65);
-        System.out.println("\n"+p8);
+    int p9=park.calculateFee(140);
+    System.out.println("\n"+p8);
+    System.out.println("\n"+p9);
 
     }//main e
 }//class e
@@ -152,20 +154,27 @@ class Product {
 //}
 // 7번 클래스
 class Visualizer {
-    int star = 0;
-
-    int getStars(int x) {
-        for (int j = 0; j <= 0; j++) {
-            for (int i = 1; i <= x; i++) {
-                if (x >= star) {
-                    System.out.print("★");
-                }
-                System.out.print("");
-            }
+    String getStars(int x){
+        String 문자열=""; // '매개변수 x' 숫자만큼 ★ 문자 반복
+        for (int i=0; i<=x; i++){
+            문자열 += "★"; // 한번씩 1부터 x까지 별 누적한다
         }
-        return x;
-    }
-}
+        return 문자열; //최종적인 문자열 반환
+    } //func e
+    //int star = 0;
+    //
+    //int getStars(int x) {
+    //    for (int j = 0; j <= 0; j++) {
+    //        for (int i = 1; i <= x; i++) {
+    //            if (x >= star) {
+    //                System.out.print("★");
+    //            }
+    //            System.out.print("");
+    //        }
+    //    }
+    //    return x;
+    //}
+} // class e
 // 8번 클래스
 class ParkingLot{
     int calculateFee (int minute){
