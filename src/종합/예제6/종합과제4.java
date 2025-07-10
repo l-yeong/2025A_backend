@@ -18,9 +18,9 @@ public class 종합과제4 {
             int choose = scan.nextInt();
 
             if (choose == 1) {
-                System.out.println("전화번호 :");
+                System.out.print("전화번호 :");
                 String userPhone = scan.next();
-                System.out.println("인원수 :");
+                System.out.print("인원수 :");
                 int userCount = scan.nextInt();
                 boolean result =
                         WaitingController.addWaiting(userPhone,userCount);
@@ -36,8 +36,8 @@ public class 종합과제4 {
                 for(int k=0; k<= waitings.length-1; k++){
                     Waiting waiting=waitings[k];
                     if(waiting!=null){
-                        System.out.println("연락처: "+waiting.getPhone());
-                        System.out.println("인원: "+waiting.getCount());
+                        System.out.print("연락처: "+waiting.getPhone());
+                        System.out.println("\t 인원: "+waiting.getCount());
                         System.out.println("------------------------------------");
                     }
                 }
