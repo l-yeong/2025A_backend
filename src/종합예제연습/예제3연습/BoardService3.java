@@ -21,14 +21,14 @@ public class BoardService3 {
                 System.out.println("작성자: ");
                 String writer = scan.next();
                 Board board = new Board();
-                board.content = content;
-                board.writer = writer;
+                board.contents = content;
+                board.writers = writer;
                 boolean check = false;
                 for (int i = 0; i <= boards.length - 1; i++) {
                     board = boards[i];
                     if (board == null) {
-                        board.content = content;
-                        board.writer = writer;
+                        boards[i].contents = content;
+                        boards[i].writers = writer;
                         check = true;
                     }
                 }
@@ -43,8 +43,8 @@ public class BoardService3 {
                 for (int j = 0; j <= boards.length - 1; j++) {
                     Board board = boards[j];
                     if (board != null) {
-                        System.out.println("작성자"+board.writer);
-                        System.out.println("내용"+board.content);
+                        System.out.println("작성자"+board.writers);
+                        System.out.println("내용"+board.contents);
                         System.out.println("------------------------------------");
                     }
                 }
@@ -60,6 +60,6 @@ public class BoardService3 {
 //step4: 각 기능별 세부 코드 구현
 
 class Board {
-    String content;
-    String writer;
+    String contents;
+    String writers;
 }

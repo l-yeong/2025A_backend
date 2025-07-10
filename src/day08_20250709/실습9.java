@@ -51,9 +51,7 @@ public class 실습9 {
 //        3. 매개변수가 있는 생성자: name과 price를 매개변수로 받아 초기화
 //        4. main 함수에서 기본 생성자로 객체 하나, 매개변수가 있는 생성자로 ("콜라", 2000) 정보를 가진 객체 하나를 각각 생성하고, 두 객체의 정보를 모두 출력하세요.
         Goods good=new Goods();
-        good.name="미지정";
-        good.price=0;
-        System.out.printf("%s %d",good.name,good.price);
+        System.out.printf("%s %d\n",good.name,good.price);
 
         Goods goods=new Goods("콜라",2000);
         System.out.printf("%s,%d\n",goods.name,goods.price);
@@ -62,7 +60,7 @@ public class 실습9 {
 //        1. Member 클래스에 기본 생성자를 만들고, 이 생성자 안에서 id는 "guest", isLogin은 false로 초기화되도록 하세요.
 //        2. main 함수에서 new Member()로 객체를 생성하고, 초기화된 id와 isLogin 값을 출력하여 확인하세요.
 
-        Member member=new Member("Guest",false);
+        Member member=new Member();
         System.out.println(member.id+"\t"+member.isLogin);
 
 //
@@ -112,7 +110,7 @@ public class 실습9 {
 
     }
 }
-
+//1번 클래스
 class Book{
     String title;
     String author;
@@ -123,7 +121,7 @@ class Book{
         this.price=price;
     }
 }
-
+//2번 클래스
 class Pet{
     String name;
     String species;
@@ -134,7 +132,7 @@ class Pet{
         this.age=age;
     }
 }
-
+//3번 클래스
 class Rectangle{
     int width;
     int height;
@@ -148,7 +146,7 @@ class Rectangle{
         return sum;
     }
 }
-
+//4번 클래스
 class BankAccount{
     String accountNumber;
     String ownerName;
@@ -168,33 +166,32 @@ class BankAccount{
         return balance;
     }
 }
-
+//5번 클래스
 class Goods{
     //멤버변수
     String name;
     int price;
-    Goods(){
 
+    Goods(){
+        name="미정";
+        price=0;
     }
     Goods(String name,int price){
         this.name=name;
         this.price=price;
     }
 }
-
+//6번 클래스
 class Member{
-    String id;
+        String id;
     boolean isLogin;
 
-    Member(String id,boolean isLogin){
-        this.id = id;
-        id="Guest";
-        this.isLogin=isLogin;
+        Member(){
+        id = "Guest";
         isLogin=false;
-
     }
 }
-
+//7번 클래스
 class Television{
     int channel;
     int volume;
@@ -204,7 +201,7 @@ class Television{
         this.volume=volume;
     }
 }
-
+//8번 클래스
 class Player{
     String name;
     int power;
@@ -215,7 +212,7 @@ class Player{
         this.speed=speed;
     }
 }
-
+//9번 클래스
 class MenuItem{
     String name;
     int price;
@@ -226,11 +223,7 @@ class MenuItem{
         this.isSignature=isSignature;
     }
 }
-//[문제 10] UserProfile 클래스를 만드세요. (name, age, mbti 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
-//        1. 세 멤버 변수를 모두 초기화하는 생성자를 만드세요.
-//        2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 입력받으세요.
-//        3. 입력받은 값들을 사용하여 UserProfile 객체를 생성하고, 저장된 모든 정보를 출력하세요.
-
+//10번 클래스
 class UserProfile{
     String name;
     int age;
