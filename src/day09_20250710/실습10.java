@@ -139,7 +139,7 @@ class CircleCalculator {
 //
 
 class TicketMachine{
-    //멤버변수
+    //정적변수
     static int totalTickets = 0;
     //생성자
     //메소드
