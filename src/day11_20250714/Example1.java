@@ -79,5 +79,34 @@ public class Example1 {
             System.out.println(리스트객체);
         }
 
+        //[9] String 이 아닌 내가 만든 클래스 (Member) 타입
+            // 1) 3개의 Member 객체 생성
+        Member m1=new Member("강호동",18);
+        Member m2=new Member("유재석",19);
+        Member m3=new Member("신동엽",20);
+            // 2) <Member> 타입/클래스 의 객체 3개를 저장할 ArrayList 객체생성
+            ArrayList<Member>memberList=new ArrayList<>(); // < 꺽은 광호에는 리스트/목록 내 저장할 항목의 타입
+            // 3) 리스트에 객체들을 저장하기
+            memberList.add(m1);
+            memberList.add(m2);
+            memberList.add(m3);
+            // 4) 리스트내 요소(객체)들을 순회(하나씩 조회) 하기
+            for(int i=0; i< memberList.size(); i++){
+                Member m = memberList.get(i);
+                System.out.println(m.name);
+                System.out.println(m.age);
+            }
+        
     }//main end
 }//class end
+
+
+class Member{
+    String name; //이름
+    int age;  //나이
+
+    public Member(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
