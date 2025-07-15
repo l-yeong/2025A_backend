@@ -77,7 +77,7 @@ public class 실습11 {
         library.add(book3);
 
         for (Book librarys : library) {
-            System.out.println("librarys = " +librarys.getTitle() + librarys.getAuthor());
+            System.out.println("librarys = " + librarys.getTitle() + librarys.getAuthor());
         }
 //
 //[문제 7] Scanner를 사용하여 사용자로부터 문자열을 계속해서 입력받습니다.
@@ -87,33 +87,33 @@ public class 실습11 {
 
         ArrayList<String> contents = new ArrayList<>();
 
-            System.out.println("입력:");
+        for ( ; ; ) {
+            System.out.print("입력:");
             String content = scan.next();
-            for (int i = 0; i < contents.size(); i++) {
-                String c= contents.get(i);
-                System.out.println(c);
-                if (content.equals("종료")) {
-                    System.out.println("종료 됩니다");
-                    break;
-                }
-
+            contents.add(content);
+            if (content.equals("종료")) {
+                System.out.println(contents);
+                break;
             }
+        }
 
 //
 //[문제 8] "국어", "수학", "사회", "과학"을 요소로 가지는 ArrayList를 생성하세요.
 //        1. .set(인덱스, 요소) 메소드를 사용하여 1번 인덱스의 "수학"을 "영어"로 수정하세요.
 //        2. 수정 후의 리스트 전체를 출력하여 결과가 올바른지 확인하세요.
 
-        ArrayList<String>textBook=new ArrayList<>();
+
+        ArrayList<String> textBook = new ArrayList<>();
         textBook.add("국어");
         textBook.add("수학");
         textBook.add("사회");
         textBook.add("과학");
         System.out.println("textBook = " + textBook);
-        textBook.set(1,"영어");
+        textBook.set(1, "영어");
         System.out.println("textBook = " + textBook);
-    }
-}
+
+    }//main end
+}//class end
 
 class Book{
     String title;
