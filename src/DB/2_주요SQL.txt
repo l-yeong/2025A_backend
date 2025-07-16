@@ -63,3 +63,5 @@
         주의할점)
             1. FK속성타입 과 PK속성타입 일치한다.
             2. 관례적으로 PK속성명 과 FK 속성명을 일치 한다
+[ 생성된 테이블 다이어그램 확인 ]  : 여럿 테이블 간의 관계 확인
+# workbench 상단메뉴 -> [database] -> [revers engineer] -> stored conntion : local (선택) -> [next]
