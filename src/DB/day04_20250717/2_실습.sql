@@ -82,7 +82,7 @@ select title,genre from books where genre in ('컴퓨터','경제');
 -- -- [문제 5] books 테이블에서 재고(stock) 정보가 없는(NULL) 도서의 title을 조회하세요.
 select title from books where stock is not null;
 -- -- [문제 6] books 테이블에서 도서명(title)에 '코리아' 라는 단어가 포함된 도서를 조회하세요. (LIKE 사용)
-select title from books where title like '%코리아%';
+select  *from books where title like '%코리아%';
 -- -- [문제 7] books 테이블에서 저자명(author)이 '김'으로 시작하는 3글자인 도서의 title과 author를 조회하세요. (LIKE 사용)
 select title,author from books where author like '김__'; 
 -- -- [문제 8] books 테이블의 모든 도서 정보를 가격(price)이 비싼 순(내림차순)으로 정렬하여 조회하세요.
