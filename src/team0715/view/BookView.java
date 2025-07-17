@@ -88,7 +88,7 @@ public class BookView {
         System.out.println("--- 도서 대출 ---");
         System.out.println("대출할도서번호: ");
         int bno = scan.nextInt();
-        String result= loanController.
+        //String result= loanController.
 
     }
 
@@ -166,7 +166,7 @@ public class BookView {
                     System.out.println("대출할 도서 번호:");
                     int bno = scan.nextInt();
                     ArrayList<BookDto> result = bookController.getBookList();
-                    String bookloan = bookController.BookLoan(bno);
+                    //String bookloan = bookController.BookLoan(bno);
                     for (int k = 0; k < result.size(); k++) {
                         BookDto book1 = result.get(k);
                         
