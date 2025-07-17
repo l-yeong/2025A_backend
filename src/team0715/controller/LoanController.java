@@ -9,4 +9,10 @@ public class LoanController {
         return loanController;
     } //public static LoanController end
     private LoanDao loanDao = LoanDao.getInstance();
+
+    //public String bookLoan(int bno){
+        //boolean result=false;
+        //result=LoanDao.
+        //return  result;
+    //}
 }

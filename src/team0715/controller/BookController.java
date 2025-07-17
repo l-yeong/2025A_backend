@@ -22,11 +22,6 @@ public class BookController {
         return  result;
     }
 
-    public String BookLoan(int bno){
-        result=bookDao.bookLoan(bno);
-        return result;
-    }
-
     //도서 목록
     public ArrayList<BookDto>getBookList(){
         return bookDao.getBookList();

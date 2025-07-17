@@ -1,6 +1,7 @@
 package team0715.view;
 
 import team0715.controller.BookController;
+import team0715.controller.LoanController;
 import team0715.controller.MemberController;
 import team0715.model.dto.BookDto;
 
@@ -18,11 +19,11 @@ public class BookView {
         return bookView;
     }//public static BookView end
 
-    private BookController bookController = BookController.getInstance();
-
 
     //2) controller 싱글톤 가져오기
     private MemberController memberController = MemberController.getInstance();
+    private BookController bookController = BookController.getInstance();
+    private LoanController loanController = LoanController.getInstance();
 
     //*모든 메소드에서 사용 가능한 Scanner 입력객체
     private Scanner scan = new Scanner(System.in);
@@ -82,6 +83,14 @@ public class BookView {
         }
     }
 
+    public void bookLoan(){
+        System.out.println();
+        System.out.println("--- 도서 대출 ---");
+        System.out.println("대출할도서번호: ");
+        int bno = scan.nextInt();
+        String result= loanController.
+
+    }
 
     //3) 로그인 등록 입출력 구현
     public void login() {

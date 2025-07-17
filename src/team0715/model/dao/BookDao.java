@@ -22,12 +22,6 @@ public class BookDao {
         return result;
     }
 
-    public String bookLoan(int bno){
-        BookDto bookDto = new BookDto(bno);
-        bookDB.get(bno);
-        result=true;
-        return result;
-    }
     //도서목록
     public ArrayList<BookDto>getBookList(){
         return bookDB;
