@@ -113,8 +113,19 @@ select  customer, order_date from orders order by order_date asc limit 0,5;
 select  customer, order_date from orders order by order_date desc limit 0,5;
 
 -- [문제 15] orders 테이블에서 도서별 평균 주문 수량을 조회하세요.
+select avg(order_qty) from orders;
+
 -- [문제 16] books 테이블에서 장르별 평균 가격이 18000원을 초과하는 장르와 그 평균 가격을 조회하세요.
+select genre, avg(price) from books where price >= 18000 group by genre having avg(price);
+
 -- [문제 17] orders 테이블에서 2023년 1분기(1월~3월)에 발생한 총 주문 수량을 조회하세요. (BETWEEN 사용)
+select order_qty, order_date from orders where order_date between '2023-01-01' and '2023-03-31';
+
 -- [문제 18] orders 테이블에서 가장 다양한 종류의 책을 주문한 고객의 이름과 그 종류의 수를 조회하세요.
+select  customer, count(book_id) as 종류수  from orders group by customer having 종류수 limit 1;
+
 -- [문제 19] books 테이블에서 각 장르별로 가장 저렴한 도서의 가격을 조회하세요.
+select genre,min(price) from books group by genre;
+
 -- [문제 20] orders 테이블에서 주문을 단 한 번만 한 고객을 조회하세요. (조회결과: 0개 레코드)
+select customer, sum(order_qty) as 합계 from orders group by customer having 합계 =1;
