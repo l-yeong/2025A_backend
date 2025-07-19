@@ -58,7 +58,7 @@ public class WaitingView {
         ArrayList<WaitingDto>result=WaitingController.getWaitingcontroller().getWaitingList(); // 컨트롤러에서 리스트 호출 후 result 대입한다...? 맞는 표현인가......
         for(int i=0; i< result.size(); i++){
             WaitingDto wait=result.get(i);
-            System.out.printf("연락처: %s - 인원: %d명 \n",wait.getPhone(),wait.getCount());
+            System.out.printf(i+1+". 연락처: %s - 인원: %d명 \n",wait.getPhone(),wait.getCount());
             System.out.println("------------------------------------");
         }
 
