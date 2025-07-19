@@ -1,4 +1,4 @@
-package 종합.예제7.종합과제5.model.dto;
+package 종합과제.예제7_종합과제5.model.dto;
 
 
 public class WaitingDto {

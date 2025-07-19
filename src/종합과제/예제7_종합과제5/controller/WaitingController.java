@@ -1,8 +1,7 @@
-package 종합.예제7.종합과제5.controller;
+package 종합과제.예제7_종합과제5.controller;
 
-import 종합.예제7.종합과제5.model.dao.WaitingDao;
-import 종합.예제7.종합과제5.model.dto.WaitingDto;
-import 종합.예제7.종합과제5.view.WaitingView;
+import 종합과제.예제7_종합과제5.model.dao.WaitingDao;
+import 종합과제.예제7_종합과제5.model.dto.WaitingDto;
 
 public class WaitingController {
     //싱글톤 만들기

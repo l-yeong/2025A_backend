@@ -1,4 +1,4 @@
-package 종합.예제3;
+package 종합과제.예제3_종합과제2;
 
 import java.util.Scanner;
 

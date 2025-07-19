@@ -1,6 +1,6 @@
-package 종합.예제7.종합과제5.model.dao;
+package 종합과제.예제7_종합과제5.model.dao;
 
-import 종합.예제7.종합과제5.model.dto.WaitingDto;
+import 종합과제.예제7_종합과제5.model.dto.WaitingDto;
 
 //데이터 접근 방식 클래스
 public class WaitingDao {
