@@ -26,7 +26,7 @@ public class BoardDao {
     public boolean boardWrite(BoardDto boardDto){
         // boolean: 반환타입으로 성공시 true 실패시 false
         // boardWrite : 임의의 함수명
-        // Board Dto boardDto : 매개변수
+        // BoardDto boardDto : 매개변수
         boardDB.add(boardDto);
 
         saveCSV();// *CSV 저장
