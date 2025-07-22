@@ -242,17 +242,16 @@ public class 실습15 {
                 // (7) CSV 분해하기
                 System.out.println(bupyeongPop.split("\n")[1].split(",")[0]); // 첫 행 행정기관
                 System.out.println(bupyeongPop.split("\n")[1].split(",")[1]); // 첫 행 총인구
+
                 String[] bupyeongPopCsv = bupyeongPop.split("\n"); // 행단위로 쪼개서 배열에 저장
                 for( int i=0; i<bupyeongPopCsv.length;i++){
                     String row=bupyeongPopCsv[i];
                     String[] col= row.split(","); //행을 열 단위로 쪼개서 배열에 저장
 
-                    System.out.printf("동별:[ %s ], 총 인구:[ %d ]",col[1],col[2]);
-                }
+                    System.out.printf("동별:[ %s ], 총 인구:[ %s ] \n",col[0],col[1]);
+                }//for end
+
             } // if end
-
-
-
         }catch (Exception e){
             System.out.println("[8번문제]예외발생"+e);
         } // try,catch end
