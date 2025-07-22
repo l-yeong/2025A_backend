@@ -63,46 +63,46 @@ public class 실습15 {
 //        1. FileOutputStream을 사용하여 src/visit_log.txt 파일을 여세요.
 //        2. Scanner로 방문자 이름을 입력받아, "OOO님이 방문했습니다.\n" 형식의 문자열을 visit_log.txt 파일의 기존 내용 뒤에 추가하세요.
 //        3. 프로그램을 여러 번 실행하여 방문 기록이 계속 누적되는지 확인하세요.
-        Scanner scan=new Scanner(System.in);
-
-        try {
-            // 쓰기
-            // (1) 키보드로부터 아무거나 입력 받기
-            System.out.print("[4번문제] 방문자 이름 입력: ");
-            String vname = scan.nextLine();
-
-            // (2) 파일의 경로 지정
-            String visitOutPath ="./src/day16_20250721/visit_log.txt";
-            // (3) 파일 쓰기 객체
-            FileOutputStream visitOutLog = new FileOutputStream(visitOutPath,true);
-            // 추가 방문 했습니다
-            String bname = vname+" 님이 방문 했습니다. \n";
-            // (4) 입력받은 문자열을 바이트 변환
-            byte[] outVisit = bname.getBytes();
-            // (5) 변환된 바이트를 내보내기
-            visitOutLog.write(outVisit);
-
-            //호출
-            // (1) 파일 존재 여부 확인
-            String visiInPath ="./src/day16_20250721/visit_log.txt";
-            File file = new File(visiInPath);
-            //System.out.println(file.exists());
-            // (2) 파일이 존재할 경우
-            if(file.exists()){
-                // (3) 파일 입력 객체 생성
-                FileInputStream visitInlog = new FileInputStream(visiInPath);
-                // (4) 읽어왔을때 바이트들을 저장할 바이트 배열 선언
-                byte[] inVisit = new byte[(int)file.length()];
-                // (5) 읽어오기
-                visitInlog.read(inVisit);
-                //(6) 읽어온 바이트배열을 문자열로 변환
-                String visit = new String(inVisit);
-                System.out.println("[4번문제] 방문자:"+visit);
-            } //if end
-
-        }catch (Exception e){
-            System.out.println("[4번문제] 예외발생"+e);
-        } //try, catch end
+//        Scanner scan=new Scanner(System.in);
+//
+//        try {
+//            // 쓰기
+//            // (1) 키보드로부터 아무거나 입력 받기
+//            System.out.print("[4번문제] 방문자 이름 입력: ");
+//            String vname = scan.nextLine();
+//
+//            // (2) 파일의 경로 지정
+//            String visitOutPath ="./src/day16_20250721/visit_log.txt";
+//            // (3) 파일 쓰기 객체
+//            FileOutputStream visitOutLog = new FileOutputStream(visitOutPath,true);
+//            // 추가 방문 했습니다
+//            String bname = vname+" 님이 방문 했습니다. \n";
+//            // (4) 입력받은 문자열을 바이트 변환
+//            byte[] outVisit = bname.getBytes();
+//            // (5) 변환된 바이트를 내보내기
+//            visitOutLog.write(outVisit);
+//
+//            //호출
+//            // (1) 파일 존재 여부 확인
+//            String visiInPath ="./src/day16_20250721/visit_log.txt";
+//            File file = new File(visiInPath);
+//            //System.out.println(file.exists());
+//            // (2) 파일이 존재할 경우
+//            if(file.exists()){
+//                // (3) 파일 입력 객체 생성
+//                FileInputStream visitInlog = new FileInputStream(visiInPath);
+//                // (4) 읽어왔을때 바이트들을 저장할 바이트 배열 선언
+//                byte[] inVisit = new byte[(int)file.length()];
+//                // (5) 읽어오기
+//                visitInlog.read(inVisit);
+//                //(6) 읽어온 바이트배열을 문자열로 변환
+//                String visit = new String(inVisit);
+//                System.out.println("[4번문제] 방문자:"+visit);
+//            } //if end
+//
+//        }catch (Exception e){
+//            System.out.println("[4번문제] 예외발생"+e);
+//        } //try, catch end
 
 //
 //[문제 5] 연락처를 CSV 형식으로 파일에 저장하기
@@ -110,113 +110,113 @@ public class 실습15 {
 //        2. 입력받은 데이터들을 쉼표(,)로 연결하여 하나의 String으로 만드세요. (예: "유재석,010-1234-5678,서울")
 //        3. 해당 문자열을 contacts.csv 파일에 저장하세요. (줄바꿈 문자 \n 포함)
 
-        try {
-
-            // 쓰기
-            // (1) 키보드로부터 아무거나 입력 받기
-            System.out.print("[5번문제] 이름: ");
-            String name = scan.next();
-            System.out.print("[5번문제] 전화번호: ");
-            String phone = scan.next();
-            System.out.print("[5번문제] 사는 도시: ");
-            String city = scan.next();
-
-            // (2) 파일의 경로 지정
-            String contactsOutPath = "./src/day16_20250721/contacts.csv";
-
-            // (3) 파일 쓰기 객체
-            FileOutputStream contactsOut = new FileOutputStream(contactsOutPath);
-
-            // 추가 수정 중간에 쉼표 넣기
-            String contactComma = name+","+phone+","+city;
-
-            // (4) 입력받은 문자열을 바이트 변환
-            byte[] outContacts = contactComma.getBytes();
-
-            // (5) 변환된 바이트를 내보내기
-            contactsOut.write(outContacts);
-
-            //호출
-            // (1) 파일 존재 여부 확인
-            String contactsInPath = "./src/day16_20250721/contacts.csv";
-            File file = new File(contactsInPath);
-            //System.out.println("[5번문제 파일 존재 여부]"+file.exists());
-            // (2) 파일이 존재할 경우
-            if(file.exists()){
-                // (3) 파일 입력 객체 생성
-                FileInputStream contactsIn = new FileInputStream(contactsInPath);
-
-                // (4) 읽어왔을때 바이트들을 저장할 바이트 배열 선언
-                byte[] inByte=  new byte[(int)file.length()];
-                // (5) 읽어오기
-                contactsIn.read(inByte);
-                // (6) 읽어온 바이트배열을 문자열로 변환
-                String contacts = new String(inByte);
-                System.out.println(contacts);
-            }
-        }catch (Exception e){
-            System.out.println("[5번문제]예외발생"+e);
-        } //try,catch end
+        //try {
+        //
+        //    // 쓰기
+        //    // (1) 키보드로부터 아무거나 입력 받기
+        //    System.out.print("[5번문제] 이름: ");
+        //    String name = scan.next();
+        //    System.out.print("[5번문제] 전화번호: ");
+        //    String phone = scan.next();
+        //    System.out.print("[5번문제] 사는 도시: ");
+        //    String city = scan.next();
+        //
+        //    // (2) 파일의 경로 지정
+        //    String contactsOutPath = "./src/day16_20250721/contacts.csv";
+        //
+        //    // (3) 파일 쓰기 객체
+        //    FileOutputStream contactsOut = new FileOutputStream(contactsOutPath);
+        //
+        //    // 추가 수정 중간에 쉼표 넣기
+        //    String contactComma = name+","+phone+","+city;
+        //
+        //    // (4) 입력받은 문자열을 바이트 변환
+        //    byte[] outContacts = contactComma.getBytes();
+        //
+        //    // (5) 변환된 바이트를 내보내기
+        //    contactsOut.write(outContacts);
+        //
+        //    //호출
+        //    // (1) 파일 존재 여부 확인
+        //    String contactsInPath = "./src/day16_20250721/contacts.csv";
+        //    File file = new File(contactsInPath);
+        //    //System.out.println("[5번문제 파일 존재 여부]"+file.exists());
+        //    // (2) 파일이 존재할 경우
+        //    if(file.exists()){
+        //        // (3) 파일 입력 객체 생성
+        //        FileInputStream contactsIn = new FileInputStream(contactsInPath);
+        //
+        //        // (4) 읽어왔을때 바이트들을 저장할 바이트 배열 선언
+        //        byte[] inByte=  new byte[(int)file.length()];
+        //        // (5) 읽어오기
+        //        contactsIn.read(inByte);
+        //        // (6) 읽어온 바이트배열을 문자열로 변환
+        //        String contacts = new String(inByte);
+        //        System.out.println(contacts);
+        //    }
+        //}catch (Exception e){
+        //    System.out.println("[5번문제]예외발생"+e);
+        //} //try,catch end
 
 //
 //[문제 6] 영화 감상평을 파일에 저장하기
 //        1. Scanner를 사용하여 사용자로부터 좋아하는 영화 제목과 감상평을 한 줄로 입력받으세요.
 //        2. 입력받은 내용을 src 폴더 내의 src/movie_review.txt 파일에 저장하세요.
-
-        try {
-            // 쓰기
-            // (1) 키보드로부터 아무거나 입력 받기
-            System.out.print("[6번문제] 영화 제목: ");
-            String title = scan.nextLine();
-            System.out.print("[6번문제] 영화 감상평: ");
-            String content = scan.nextLine();
-            // (2) 파일의 경로 지정
-            String movieOutPath = "./src/day16_20250721/movie_review.txt";
-
-            // (3) 파일 쓰기 객체
-            FileOutputStream movieOut = new FileOutputStream(movieOutPath);
-
-            // 저장 이쁘게 하기
-            String movieReview = "영화제목 : "+title+"\n"+"영화 감상평 : "+content;
-
-            // (4) 입력받은 문자열을 바이트 변환
-            byte[] moiveOut = movieReview.getBytes();
-
-            // (5) 변환된 바이트를 내보내기
-            movieOut.write(moiveOut);
-        }catch (Exception e){
-            System.out.println("[6번문제]예외발생"+e);
-        } //try,catch end
+//
+//        try {
+//            // 쓰기
+//            // (1) 키보드로부터 아무거나 입력 받기
+//            System.out.print("[6번문제] 영화 제목: ");
+//            String title = scan.nextLine();
+//            System.out.print("[6번문제] 영화 감상평: ");
+//            String content = scan.nextLine();
+//            // (2) 파일의 경로 지정
+//            String movieOutPath = "./src/day16_20250721/movie_review.txt";
+//
+//            // (3) 파일 쓰기 객체
+//            FileOutputStream movieOut = new FileOutputStream(movieOutPath);
+//
+//            // 저장 이쁘게 하기
+//            String movieReview = "영화제목 : "+title+"\n"+"영화 감상평 : "+content;
+//
+//            // (4) 입력받은 문자열을 바이트 변환
+//            byte[] moiveOut = movieReview.getBytes();
+//
+//            // (5) 변환된 바이트를 내보내기
+//            movieOut.write(moiveOut);
+//        }catch (Exception e){
+//            System.out.println("[6번문제]예외발생"+e);
+//        } //try,catch end
 
 //
 //[문제 7] 저장된 감상평 파일 읽기
 //        1. 문제 3에서 생성된 src/movie_review.txt 파일의 내용을 읽어오세요.
 //        2. File 클래스의 .length()를 사용하여 파일 크기만큼 바이트 배열을 선언하고, 파일 전체를 한 번에 읽어오세요.
 //        3. 읽어온 내용을 콘솔에 출력하세요.
-        try {
-            //호출
-            // (1) 파일 존재 여부 확인
-            String movieInPath = "./src/day16_20250721/movie_review.txt";
-            File file = new File(movieInPath);
-            System.out.println("[7번문제] 파일 확인 여부:"+file.exists());
-            System.out.println("[7번문제] 파일 용량 확인 :"+file.length());
-
-            // (2) 파일이 존재할 경우
-            if(file.exists()){
-                // (3) 파일 입력 객체 생성
-                FileInputStream movieIn = new FileInputStream(movieInPath);
-                // (4) 읽어왔을때 바이트들을 저장할 바이트 배열 선언
-                byte[] inByte = new byte[64];
-                // (5) 읽어오기
-                movieIn.read(inByte);
-                // (6) 읽어온 바이트배열을 문자열로 변환
-                String moiveReview = new String(inByte);
-                System.out.println(moiveReview);
-            }// if end
-
-        }catch (Exception e){
-            System.out.println("[7번문제] 예외발생"+e);
-        }//try,catch end
+//        try {
+//            //호출
+//            // (1) 파일 존재 여부 확인
+//            String movieInPath = "./src/day16_20250721/movie_review.txt";
+//            File file = new File(movieInPath);
+//            System.out.println("[7번문제] 파일 확인 여부:"+file.exists());
+//            System.out.println("[7번문제] 파일 용량 확인 :"+file.length());
+//
+//            // (2) 파일이 존재할 경우
+//            if(file.exists()){
+//                // (3) 파일 입력 객체 생성
+//                FileInputStream movieIn = new FileInputStream(movieInPath);
+//                // (4) 읽어왔을때 바이트들을 저장할 바이트 배열 선언
+//                byte[] inByte = new byte[64];
+//                // (5) 읽어오기
+//                movieIn.read(inByte);
+//                // (6) 읽어온 바이트배열을 문자열로 변환
+//                String moiveReview = new String(inByte);
+//                System.out.println(moiveReview);
+//            }// if end
+//
+//        }catch (Exception e){
+//            System.out.println("[7번문제] 예외발생"+e);
+//        }//try,catch end
 //
 //[문제 8] 공공데이터 CSV 파일 읽고 분석하기
 //        1. **공공데이터포털(data.go.kr)**에서 '부평구_인구현황'을 검색하여 CSV 파일을 다운로드하고, src 폴더에 bupyeong_population.csv 라는 이름으로 저장하세요.
@@ -226,7 +226,7 @@ public class 실습15 {
         try {
             //호출
             // (1) 파일 존재 여부 확인
-            String bupyeongPath = "src/day16_20250721/인천광역시 부평구_인구 현황_20250131.csv";
+            String bupyeongPath = "src/day16_20250721/bupyeong_population.csv";
             File bupyeongPopFile = new File(bupyeongPath);
             System.out.println("[8번문제] 파일 확인용" + bupyeongPopFile.exists());
 
