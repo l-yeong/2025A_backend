@@ -79,6 +79,7 @@ public class BoardDao {
             CSVWriter csvWriter = new CSVWriter(fileWriter);
             // (3) 빈 리스트 생성
             List<String[]> outData = new ArrayList<>();
+
             //ArrayList(구현체), List(인터페이스)
             // (4) 현재 모든 정보를 outdata에 담아준다
             for (BoardDto boardDto : boardDB) {
