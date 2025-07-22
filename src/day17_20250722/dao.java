@@ -1,0 +1,41 @@
+package day17_20250722;
+
+import com.mysql.cj.jdbc.Driver;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+// Data Access Object: 데이터(데이터베이스/파일) 접근 객체
+public class dao {
+    //싱글톤
+    private dao(){
+        // Dao객체가 생성 될때  db연동
+        openDB();
+    }
+    private static final dao dAo = new dao();
+    public static dao getdAo(){
+        return dAo;
+    }
+    //싱글톤 호출
+
+    //(!)DB연동에 필요한 정보
+    private String db_url="jdbc:mysql://localhost:3306/mydb0722";
+    private String db_id="root";
+    private String db_pwd="1234";
+    private Connection conn; //DB 연동 결과 갖는 인터페이스
+    //(1)연동 함수
+    public void openDB(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); // mysql 드라이버/클래스 로드 함수
+            conn = DriverManager.getConnection(db_url, db_id, db_pwd);
+            System.out.println("[시스팀 안내] 데이터베이스 연동 성공");
+
+        } catch (ClassNotFoundException e) {System.out.println("[경고]mysql 드라이버 로드 실패"+e);}//try.catch end
+        catch (SQLException e) {System.out.println("[경고]데이터베이스 연동"+e);}//try.catch end
+    } // openDB func end
+
+    //등록함수
+    //조회함수
+
+}//class
