@@ -74,11 +74,9 @@ public class 실습15 {
             // (2) 파일의 경로 지정
             String visitOutPath ="./src/day16_20250721/visit_log.txt";
             // (3) 파일 쓰기 객체
-            FileOutputStream visitOutLog = new FileOutputStream(visitOutPath);
-
+            FileOutputStream visitOutLog = new FileOutputStream(visitOutPath,true);
             // 추가 방문 했습니다
             String bname = vname+" 님이 방문 했습니다. \n";
-
             // (4) 입력받은 문자열을 바이트 변환
             byte[] outVisit = bname.getBytes();
             // (5) 변환된 바이트를 내보내기
@@ -101,6 +99,7 @@ public class 실습15 {
                 String visit = new String(inVisit);
                 System.out.println("[4번문제] 방문자:"+visit);
             } //if end
+
         }catch (Exception e){
             System.out.println("[4번문제] 예외발생"+e);
         } //try, catch end
