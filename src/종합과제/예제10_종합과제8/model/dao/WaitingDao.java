@@ -13,9 +13,9 @@ public class WaitingDao {
         return waitingDao;
     }
 
-    String db_url = "jdbc:mysql://localhost:3306/mydb0723/exam10";
-    String db_user = "root";
-    String db_pwd = "1234";
+    private String db_url = "jdbc:mysql://localhost:3306/exam10";
+    private String db_user = "root";
+    private String db_pwd = "1234";
     private Connection conn;
 
     //DB 연동
@@ -23,7 +23,6 @@ public class WaitingDao {
         try {
          Class.forName("com.mysql.cj.jdbc.Driver");
          conn=DriverManager.getConnection(db_url,db_user,db_pwd);
-            System.out.println("연동성공");
         } catch (Exception e) {System.out.println(e);} //catch end
     }//open end
 
@@ -52,12 +51,12 @@ public class WaitingDao {
     }//readWaitingList end
 
     //삭제
-    public boolean deleteWaiting(){
-
-    }//deleteWaiting end
+    //public boolean deleteWaiting(){
+    //
+    //}//deleteWaiting end
 
     //수정
-    public boolean editWaiting(){
-
-    }//editWaiting end
+    //public boolean editWaiting(){
+    //
+    //}//editWaiting end
 }//class end

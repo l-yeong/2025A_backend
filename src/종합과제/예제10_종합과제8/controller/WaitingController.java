@@ -25,12 +25,12 @@ public class WaitingController {
     }//readWaitingList end
 
     //삭제
-    public boolean deleteWaiting(){
-
-    }//deleteWaiting end
+    //public boolean deleteWaiting(){
+    //
+    //}//deleteWaiting end
 
     //수정
-    public boolean editWaiting(){
-
-    }//editWaiting end
+    //public boolean editWaiting(){
+    //
+    //}//editWaiting end
 }//class end
