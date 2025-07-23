@@ -49,7 +49,7 @@ public class Example2 {
             System.out.println("데이터베이스 연동 성공");
 
             // 자바에서 insert 문법 사용해보기 --------------------------------------//
-            String sql = "insert test values('안녕하세요')"; // 5) sql 작성
+            String sql = "insert into test values('안녕하세요')"; // 5) sql 작성
             PreparedStatement ps = conn.prepareStatement( sql );// 6) 지정한 sql를 연동된 인터페이스에 대입, .prepareStatement( sql )
             ps.execute(); // 7) 기재된 SQL 실행, PreparedStatement
 
