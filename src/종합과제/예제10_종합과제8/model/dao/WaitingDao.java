@@ -5,6 +5,8 @@ import 종합과제.예제10_종합과제8.model.dto.WaitingDto;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class WaitingDao {
     private WaitingDao(){open();}
@@ -46,17 +48,49 @@ public class WaitingDao {
     }// createWaiting end
 
     //조회
-    public void readWaitingList(){
-
+    public ArrayList<WaitingDto> readWaitingList () {
+        ArrayList<WaitingDto> list = new ArrayList<>();
+        try {
+            // 1. SQL 작성한다.
+            String sql = "select *from waiting;";
+            // 2. SQL 기재한다..
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 3. SQL 매개변수 대입
+            // 4. SQL 실행  , insert/update/delete 은 .executeUpdate();
+            ResultSet rs = ps.executeQuery();
+            // 5. sql 결과에 따른 로직/리턴/확인
+            while (rs.next()) {
+                int wno = rs.getInt("wno");
+                String wphone = rs.getNString("wphone");
+                int wcount = rs.getInt("wcount");
+                WaitingDto waitingDto = new WaitingDto(wno,wphone,wcount);
+                list.add(waitingDto);
+            }//while end
+        } catch (Exception e) {System.out.println(e);}//catch end
+        return list;
     }//readWaitingList end
 
     //삭제
-    //public boolean deleteWaiting(){
-    //
-    //}//deleteWaiting end
+    public boolean deleteWaiting(int wno){
+        try {
+            // 1. SQL 작성한다.
+            String sql = "delete  from waiting  where wno = ?;";
+            // 2. SQL 기재한다..
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 3. SQL 매개변수 대입 , 현재 ? 1개
+            ps.setInt(1, wno);
+            // 4. SQL 실행  , insert/update/delete 은 .executeUpdate();
+            int count = ps.executeUpdate();
+            // 5. sql 결과에 따른 로직/리턴/확인
+            if (count == 1) return true;
+            else return false;
+        } catch (Exception e) {System.out.println(e);}//catch end
+        return false;
+    }//deleteWaiting end
 
     //수정
     //public boolean editWaiting(){
+
     //
     //}//editWaiting end
 }//class end

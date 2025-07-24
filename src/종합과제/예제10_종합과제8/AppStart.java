@@ -9,8 +9,20 @@ public class AppStart {
 
         //등록 테스트
         WaitingController wc = WaitingController.getWaitingController();
-        boolean result= wc.createWaiting("010-0000-0000",1);
-        System.out.println(result);
+        //boolean result= wc.createWaiting("010-0000-0000",1);
+        //System.out.println(result);
+        //true
+
+        //조회테스트
+        //System.out.println(wc.readWaitingList());
+        //true
+
+        //삭제테스트
+        //boolean result= wc.deleteWaiting(1);
+        //System.out.println(result);
+        //true
+
+        //수정테스트
 
 
         // 1. SQL 작성한다.
