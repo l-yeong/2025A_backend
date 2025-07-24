@@ -48,7 +48,7 @@ public class WaitingDao {
     }// createWaiting end
 
     //조회
-    public ArrayList<WaitingDto> readWaitingList () {
+    public ArrayList<WaitingDto> readWaiting () {
         ArrayList<WaitingDto> list = new ArrayList<>();
         try {
             // 1. SQL 작성한다.
@@ -89,8 +89,22 @@ public class WaitingDao {
     }//deleteWaiting end
 
     //수정
-    //public boolean editWaiting(){
+    public boolean editWaiting(WaitingDto waitingDto){
+        // 1. SQL 작성한다.
+        try {
 
-    //
-    //}//editWaiting end
+            String sql = "update waiting set wcount=? where wno=?;";
+            // 2. SQL 기재한다..
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // 3. SQL 매개변수 대입 , 현재 ? 2개
+            ps.setInt(1,waitingDto.getWcount());
+            ps.setInt(2,waitingDto.getWno());
+            // 4. SQL 실행  , insert/update/delete 은 .executeUpdate();
+            int count = ps.executeUpdate();
+            // 5. sql 결과에 따른 로직/리턴/확인
+            if(count==1) return true;
+            return false;
+        } catch (Exception e) {System.out.println(e);}//catch end\
+        return false;
+    }//editWaiting end
 }//class end

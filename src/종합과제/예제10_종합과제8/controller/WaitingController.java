@@ -22,8 +22,8 @@ public class WaitingController {
     } //createWaiting end
 
     //조회
-    public ArrayList<WaitingDto>readWaitingList(){
-        ArrayList<WaitingDto> result= waitingDao.readWaitingList();
+    public ArrayList<WaitingDto>readWaiting(){
+        ArrayList<WaitingDto> result= waitingDao.readWaiting();
         return result;
 
     }//readWaitingList end
@@ -35,7 +35,9 @@ public class WaitingController {
     }//deleteWaiting end
 
     //수정
-    //public boolean editWaiting(){
-    //
-    //}//editWaiting end
+    public boolean editWaiting(int wno, int wcount){
+        WaitingDto waitingDto = new WaitingDto(wno,null,wcount);
+        boolean resultEdit = waitingDao.editWaiting(waitingDto);
+        return resultEdit;
+    }//editWaiting end
 }//class end

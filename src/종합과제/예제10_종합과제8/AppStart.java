@@ -1,14 +1,16 @@
 package 종합과제.예제10_종합과제8;
 
 import 종합과제.예제10_종합과제8.controller.WaitingController;
+import 종합과제.예제10_종합과제8.view.WaitingView;
 
 public class AppStart {
     public static void main(String[] args) {
 
 
+        //WaitingView.getWaitingView().
 
         //등록 테스트
-        WaitingController wc = WaitingController.getWaitingController();
+        //WaitingController wc = WaitingController.getWaitingController();
         //boolean result= wc.createWaiting("010-0000-0000",1);
         //System.out.println(result);
         //true
@@ -23,7 +25,8 @@ public class AppStart {
         //true
 
         //수정테스트
-
+        //boolean result=wc.editWaiting(22,3);
+        //System.out.println(result);
 
         // 1. SQL 작성한다.
         // 2. SQL 기재한다..
