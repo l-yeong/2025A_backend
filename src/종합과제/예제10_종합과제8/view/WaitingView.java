@@ -42,7 +42,7 @@ public class WaitingView {
                 }else if(choose==3){
                     deleteWaiting();
                 }else if(choose==4){
-
+                    editWaiting();
                 }else{System.out.println("없는 메뉴번호 입니다.");} //if end
             } catch (InputMismatchException e) {
                 scan=new Scanner(System.in);
@@ -68,10 +68,11 @@ public class WaitingView {
         ArrayList<WaitingDto> result = wc.readWaiting();
         System.out.println("╔═════════════════════════════╗");
         for(WaitingDto dto : result) {
-            System.out.printf("     연락처:%s",dto.getWphone());
-            System.out.printf("     인인수:$d",dto.getWcount());
-            System.out.println("╚═════════════════════════════╝");
+            System.out.printf("   연락처:%s \n ",dto.getWphone());
+            System.out.printf("   인인수:%d \n",dto.getWcount());
+
         }//for end
+        System.out.println("╚═════════════════════════════╝");
     } // readWaitingend
 
     public void deleteWaiting() {
@@ -81,5 +82,15 @@ public class WaitingView {
         if (resultDelete) {System.out.println("[안내]삭제 성공");}
         else {System.out.println("[경고]삭제 실패");}
     } // deleteWaiting end
+
+    public void editWaiting(){
+        System.out.println("수정할번호: ");
+        int wno = scan.nextInt();
+        System.out.println("인원수: ");
+        int wcount = scan.nextInt();
+        boolean resultEdit = wc.editWaiting(wno,wcount);
+        if(resultEdit) {System.out.println("[안내] 수정 성공");
+        }else {System.out.println("[경고] 수정 실패");} // if end
+    } // editWaiting end
 }//class end
 

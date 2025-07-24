@@ -7,7 +7,7 @@ public class AppStart {
     public static void main(String[] args) {
 
 
-        //WaitingView.getWaitingView().
+        WaitingView.getWaitingView().mainView();
 
         //등록 테스트
         //WaitingController wc = WaitingController.getWaitingController();
