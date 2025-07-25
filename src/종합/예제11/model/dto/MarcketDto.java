@@ -14,7 +14,7 @@ public class MarcketDto {
     //기본생성자
     public MarcketDto(){}
 
-    //수정 및 삭제 사용할 생성자
+    //삭제 사용할 생성자
     public MarcketDto(int kno, String kpwd){
         this.kno=kno;
         this.kpwd=kpwd;
@@ -96,4 +96,18 @@ public class MarcketDto {
     }
 
     //toString
+
+    @Override
+    public String toString() {
+        return "MarcketDto{" +
+                "kno=" + kno +
+                ", kprice=" + kprice +
+                ", kseller='" + kseller + '\'' +
+                ", kpwd='" + kpwd + '\'' +
+                ", kitem='" + kitem + '\'' +
+                ", ktext='" + ktext + '\'' +
+                ", Status='" + Status + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }//class end
