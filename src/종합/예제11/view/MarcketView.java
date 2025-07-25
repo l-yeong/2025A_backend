@@ -87,7 +87,9 @@ public class MarcketView {
         int kno = scan.nextInt();
         System.out.print("비밀번호: ");
         String kpwd=scan.next();
-        if(kno==kno&&kpwd.equals(kpwd)){
+
+        String getPwd = marcketController.getPwd(kno);
+        if(getPwd!=null&&getPwd.equals(kpwd)){
             System.out.print("물품명: ");
             String kitem = scan.next();
             System.out.print("설명: ");

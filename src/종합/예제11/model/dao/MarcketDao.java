@@ -2,10 +2,7 @@ package 종합.예제11.model.dao;
 
 import 종합.예제11.model.dto.MarcketDto;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MarcketDao {
@@ -99,8 +96,18 @@ public class MarcketDao {
         } catch (Exception e) {System.out.println(e);}//catch end
         return false;
     }//marcketEdit end
-    //수정필요한정보
 
+    //getPWD
+    public String getPwd(int kno){
+        try {
+            String sql= "select kpwd from marcket where kno=?;";
+            PreparedStatement ps = conn.prepareCall(sql);
+            ps.setInt(1,kno);
+            ResultSet rs= ps.executeQuery();
+            if(rs.next()){return rs.getString("kpwd");}//if end
+        } catch (SQLException e) {System.out.println(e);}//catch end
+        return null;
+    }//getPwd end
 
     //삭제
     public boolean marcketDelete(MarcketDto marcketDto){

@@ -37,6 +37,11 @@ public class MarcketController {
         return reaultEdit;
     }//marcketEdit end
 
+    public String getPwd(int kno){
+        String result = marcketDao.getPwd(kno);
+        return result;
+    }//getPwd
+
     //삭제
     public boolean marcketDelete(String kpwd,int kno){
         MarcketDto marcketDto = new MarcketDto(kno,kpwd);
