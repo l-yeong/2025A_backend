@@ -100,10 +100,15 @@ public class MarcketDao {
     //getPWD
     public String getPwd(int kno){
         try {
+            // 1. SQL 작성한다.
             String sql= "select kpwd from marcket where kno=?;";
+            // 2. SQL 기재한다..
             PreparedStatement ps = conn.prepareCall(sql);
+            // 3. SQL 매개변수 대입
             ps.setInt(1,kno);
+            // 4. SQL 실행  , insert/update/delete 은 .executeUpdate();
             ResultSet rs= ps.executeQuery();
+            // 5. sql 결과에 따른 로직/리턴/확인
             if(rs.next()){return rs.getString("kpwd");}//if end
         } catch (SQLException e) {System.out.println(e);}//catch end
         return null;

@@ -38,7 +38,7 @@ public class MarcketView {
                 if(choose==1){marcketAdd();} //등록
                 else if(choose==2){marcketPrint();} //조회
                 else if(choose==3){marcketEdit();} // 수정
-                else if(choose==4){}
+                else if(choose==4){marcketDelete();} //삭제
                 else{System.out.println(" 잘못된 메뉴번호 입니다.");} //if end
             }catch (InputMismatchException e)
             {System.out.println(" 잘못 누르셨습니다. (다시 입력해주세요)"+e);
@@ -83,13 +83,15 @@ public class MarcketView {
 
     public void marcketEdit(){
 
-        System.out.print("물품번호: ");
+        System.out.print("[수정] 물품번호: ");
         int kno = scan.nextInt();
         System.out.print("비밀번호: ");
         String kpwd=scan.next();
 
         String getPwd = marcketController.getPwd(kno);
-        if(getPwd!=null&&getPwd.equals(kpwd)){
+        //kno입력할때 DB에 없는 번호 입력시 (NullPointerException) 발생하여 유효성 검사로 getPwd!=null 추가
+        //getPwd에 매개변수 int kno 가지고 있어서 유효성을 getPwd 지정
+        if(getPwd != null&&getPwd.equals(kpwd)){
             System.out.print("물품명: ");
             String kitem = scan.next();
             System.out.print("설명: ");
@@ -99,8 +101,22 @@ public class MarcketView {
             System.out.print("판매상태:");
             String kstatus = scan.next();
             boolean resultEdit = marcketController.marcketEdit(kitem, kprice, ktext, kstatus, kno, kpwd);
-            if(resultEdit){System.out.println("[안내]글 수정 성공");
+            if(resultEdit){System.out.println("[안내]글 수정 완료");
             }else{System.out.println("[경고]글 수정 실패");}//if resultEdit end
-        }else{System.out.println("잘못된 비밀번호 입니다.");}//if end
+        }else{System.out.println("잘못된 비밀번호 입니다.");}//pwd 확인 if end
     }//marcketEdit end
+
+    public void marcketDelete(){
+        System.out.print("[삭제] 물품번호: ");
+        int kno= scan.nextInt();
+        System.out.print("비밀번호: ");
+        String kpwd = scan.next();
+
+        String getPwd = marcketController.getPwd(kno);
+        if(getPwd!=null&&getPwd.equals(kpwd)){
+            boolean resultDelete = marcketController.marcketDelete(kpwd,kno);
+            if(resultDelete){System.out.println("[안내] 삭제 완료");}
+            else {System.out.println("[경고] 삭제 실패");} //pwd 확인 if end
+        } // if end
+    } // marcketDelete end
 }//class end

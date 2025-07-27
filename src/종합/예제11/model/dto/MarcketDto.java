@@ -14,7 +14,7 @@ public class MarcketDto {
     //기본생성자
     public MarcketDto(){}
 
-    //삭제 사용할 생성자
+    //수정 / 삭제 사용할 생성자
     public MarcketDto(int kno, String kpwd){
         this.kno=kno;
         this.kpwd=kpwd;
