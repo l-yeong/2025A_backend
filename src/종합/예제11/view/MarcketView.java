@@ -59,8 +59,10 @@ public class MarcketView {
         System.out.print("설명: ");
         scan.nextLine();
         String ktext= scan.nextLine();
-        System.out.print("판매상태:");
-        String kstatus = scan.next();
+
+        //글 등록시 판매중 자동 지정
+        String kstatus = "판매중";
+
         System.out.println("===================");
         boolean resultAdd = marcketController.marcketAdd(kseller,kpwd,kitem,kprice,ktext,kstatus);
         if(resultAdd){System.out.println("[안내]등록 완료");
