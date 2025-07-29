@@ -23,6 +23,7 @@ public class AppStart {
         //System.out.println(result); //true
 
         BoardView.getBoardView().mainView();
+        //테스트
 
     }//main end
 }//class end
