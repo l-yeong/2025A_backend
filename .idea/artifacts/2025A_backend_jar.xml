@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="2025A_backend:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/2025A_backend_jar</output-path>
+    <root id="archive" name="2025A_backend.jar">
+      <element id="module-output" name="2025A_backend" />
+      <element id="library" level="project" name="opencsv-2.3" />
+      <element id="library" level="project" name="opencsv-2.3 (2)" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/ReSource/opencsv-2.3.jar" path-in-jar="/" />
+      <element id="library" level="project" name="mysql-connector-j-9.3.0" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/ReSource/mysql-connector-j-9.3.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
